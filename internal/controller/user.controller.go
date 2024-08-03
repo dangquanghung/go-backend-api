@@ -1,8 +1,6 @@
 package controller
 
 import (
-	"net/http"
-
 	"github.com/dangquanghung/go-ecommerce-backend-api/internal/service"
 	"github.com/gin-gonic/gin"
 )
@@ -20,8 +18,6 @@ func NewUserController() *UserController {
 // controller -> service -> repo -> models -> dbs
 func (uc *UserController) Pong(c *gin.Context) {
 
-	c.JSON(http.StatusOK, gin.H{ //map string
-		"message": uc.userService.GetInfoUser(),
-		"users":   []string{"dangquanghung", "cr7", "m10"},
-	})
+	// response.SuccessResponse(c, 20001, []string{"dangquanghung", "cr7"})
+	// response.ErrorResponse(c, 20003, "no need!")
 }
