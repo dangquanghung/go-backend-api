@@ -2,6 +2,7 @@ package controller
 
 import (
 	"github.com/dangquanghung/go-ecommerce-backend-api/internal/service"
+	"github.com/dangquanghung/go-ecommerce-backend-api/pkg/response"
 	"github.com/gin-gonic/gin"
 )
 
@@ -16,8 +17,8 @@ func NewUserController() *UserController {
 }
 
 // controller -> service -> repo -> models -> dbs
-func (uc *UserController) Pong(c *gin.Context) {
+func (uc *UserController) GetUserById(c *gin.Context) {
 
-	// response.SuccessResponse(c, 20001, []string{"dangquanghung", "cr7"})
+	response.SuccessResponse(c, 20001, []string{"dangquanghung", "cr7"})
 	// response.ErrorResponse(c, 20003, "no need!")
 }
