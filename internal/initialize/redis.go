@@ -15,6 +15,8 @@ func InitRedis() {
 
 	r := global.Config.Redis
 
+	fmt.Printf("Initializing Redis on %s:%d...\n", r.Host, r.Port)
+
 	rdb := redis.NewClient(&redis.Options{
 		Addr:     fmt.Sprintf("%s:%v", r.Host, r.Port),
 		Password: r.Password, // no password set
@@ -29,4 +31,22 @@ func InitRedis() {
 
 	fmt.Println("Redis initialized successfully")
 	global.Rdb = rdb
+	redisExample()
+}
+
+func redisExample() {
+
+	err := global.Rdb.Set(ctx, "score", 100, 0).Err()
+	if err != nil {
+		fmt.Println("Error redis setting:", zap.Error(err))
+		return
+	}
+
+	value, err := global.Rdb.Get(ctx, "score").Result()
+	if err != nil {
+		fmt.Println("Error redis getting:", zap.Error(err))
+		return
+	}
+
+	global.Logger.Info("value score is :::", zap.String("score", value))
 }
