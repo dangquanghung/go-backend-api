@@ -1,0 +1,30 @@
+package user
+
+import "github.com/gin-gonic/gin"
+
+type UserRouter struct {
+}
+
+func (pr *UserRouter) InitUserRouter(Router *gin.RouterGroup) {
+	// public routers
+
+	userRouterPublic := Router.Group("/user")
+	{
+		userRouterPublic.GET("/register") // register => yes => no
+		userRouterPublic.POST("/otp")     //
+
+	}
+
+	// private routers
+
+	userRouterPrivate := Router.Group("/user")
+	// userRouterPrivate.Use(limiter())
+	// userRouterPrivate.Use(Authen())
+	// userRouterPrivate.Use(Permission())
+
+	{
+		userRouterPrivate.GET("/get_info")
+
+	}
+
+}
