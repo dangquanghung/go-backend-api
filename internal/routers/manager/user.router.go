@@ -10,7 +10,7 @@ func (pr *UserRouter) InitUserRouter(Router *gin.RouterGroup) {
 	// public routers
 	userRouterPublic := Router.Group("/admin/user")
 	{
-		userRouterPublic.GET("/login")
+		userRouterPublic.GET("/register")
 
 	}
 	// private routers
