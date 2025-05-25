@@ -8,7 +8,7 @@ type AdminRouter struct {
 func (pr *AdminRouter) InitAdminRouter(Router *gin.RouterGroup) {
 
 	// public routers
-	adminRouterPublic := Router.Group("/admin/user")
+	adminRouterPublic := Router.Group("/admin")
 	{
 		adminRouterPublic.GET("/login")
 
