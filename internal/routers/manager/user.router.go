@@ -15,13 +15,13 @@ func (pr *UserRouter) InitUserRouter(Router *gin.RouterGroup) {
 	// }
 	// private routers
 
-	userRouterPrivate := Router.Group("/admin/user")
+	// userRouterPrivate := Router.Group("/admin/user")
 	// userRouterPrivate.Use(limiter())
 	// userRouterPrivate.Use(Authen())
 	// userRouterPrivate.Use(Permission())
 
 	{
-		userRouterPrivate.POST("/active_user")
+		// userRouterPrivate.POST("/active_user")
 
 	}
 
