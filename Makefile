@@ -23,3 +23,5 @@ down:
 	docker compose down
 
 .PHONY: run
+
+.PHONY: air
